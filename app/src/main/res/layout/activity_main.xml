@@ -4,11 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#1603A9F4"
         android:orientation="vertical">
 
         <CalendarView
@@ -31,6 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:drawableStart="@drawable/ic_event"
+            android:inputType="text"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:textColor="#7E03A9F4"
+            android:textColorHint="#7E03A9F4"
             android:drawablePadding="7dp"
             android:hint="@string/event_name"
             android:importantForAutofill="no"
@@ -41,9 +48,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_event"
+            android:drawableStart="@drawable/ic_people"
             android:drawablePadding="7dp"
+            android:inputType="textMultiLine"
+            android:maxLength="50"
+            android:maxLines="2"
             android:hint="@string/participants"
+            android:textColor="#7E03A9F4"
+            android:textColorHint="#7E03A9F4"
             android:importantForAutofill="no"
             android:padding="7dp" />
 
@@ -52,16 +64,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_event"
+            android:drawableStart="@drawable/ic_time"
             android:drawablePadding="7dp"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
             android:hint="@string/participation_time"
             android:importantForAutofill="no"
+            android:textColor="#7E03A9F4"
+            android:textColorHint="#7E03A9F4"
             android:padding="7dp" />
 
         <Button
             android:id="@+id/add_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#1603A9F4"
+            android:textColor="#7E03A9F4"
             android:text="@string/add_event" />
 
         <androidx.recyclerview.widget.RecyclerView
