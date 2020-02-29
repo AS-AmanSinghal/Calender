@@ -5,4 +5,8 @@
     <string name="participants">Participants</string>
     <string name="participation_time">Participation Time</string>
     <string name="add_event">Add Event</string>
+    <string name="event_name_">Event Name:</string>
+    <string name="name">Name</string>
+    <string name="participants_">Participants:</string>
+    <string name="time">Time</string>
 </resources>

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 Date = year + "-" + (month + 1) + "-" + dayOfMonth;
-                adapter = new Adapter(getBaseContext(), eventDataList, Date);
+                adapter = new Adapter(getApplicationContext(), eventDataList, Date);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 EventData eventData = new EventData(Date, String.valueOf(eventName.getText()).trim(),
                         String.valueOf(particiapants.getText()).trim(), String.valueOf(time.getText()).trim());
                 eventDataList.add(eventData);
-                adapter = new Adapter(getBaseContext(), eventDataList, Date);
+                adapter = new Adapter(getApplicationContext(), eventDataList, Date);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
                 eventName.setText("");

@@ -1,6 +1,7 @@
 package com.aman.calender;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         if (Date.equals(eventData.get(i).getDate())) {
             Random random = new Random();
             int color = Color.argb(255,
@@ -48,6 +49,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             eventName.setText(eventData.get(i).getEventName());
             participants.setText(eventData.get(i).getParticipants());
             time.setText(eventData.get(i).getTime());
+            card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, EventActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("event_name", eventData.get(i).getEventName());
+                    intent.putExtra("participants", eventData.get(i).getParticipants());
+                    intent.putExtra("time", eventData.get(i).getTime());
+                    context.startActivity(intent);
+                }
+            });
         } else {
             eventName.setVisibility(View.GONE);
             participants.setVisibility(View.GONE);
